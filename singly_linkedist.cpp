@@ -73,6 +73,7 @@ public:
             *previous = *current;
             *current = (*current)->next;
         }
+
         return (*current != NULL);
     }
 
@@ -106,5 +107,12 @@ public:
             cout << endl;
         }
     }
-
 };
+
+int main()
+{
+    Linkedlist mhs;
+    int nim;
+    char ch;
+    
+}
