@@ -19,7 +19,7 @@ public:
         START = NULL;
     }
 
-    Void addNode()
+    void addNode()
     {
         int nim;
         cout << "\nMasukkan Nomer Mahasiswa: ";
@@ -30,9 +30,9 @@ public:
 
         if(START== NULL || nim  <= START->noMhs)
         {
-            if ((START != NULL)) && (nim == START -> noMhs)
+            if ((START != NULL) && (nim == START-> noMhs))
             {
-                cout <, "\nDuplikasi noMhs tidak diijinkan\n";
+                cout << "\nDuplikasi noMhs tidak diijinkan\n";
                 return;
             }
             nodeBaru->next = START;
@@ -82,6 +82,13 @@ public:
         if (!Search(nim, &previous, &current))
         return false;
 
+        if (current == START)
+        START = START->next;
+        else
+            previous ->next = current->next;
+        delete current;
+        return true;
     }   
 
-}
+
+};
