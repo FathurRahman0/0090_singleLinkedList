@@ -28,7 +28,7 @@ public:
         Node *nodeBaru = new Node;
         nodeBaru->noMhs = nim;
 
-        if(start == NULL || nim  <= START->noMhs)
+        if(START== NULL || nim  <= START->noMhs)
         {
             if ((START != NULL)) && (nim == START -> noMhs)
             {
@@ -40,7 +40,7 @@ public:
             return;
         }
 
-        Node * previeus = START;
+        Node * previous = START;
         Node *current = START;
         
         while ((current != NULL) && (nim >= current->noMhs))
@@ -56,6 +56,23 @@ public:
 
         nodeBaru->next = current;
         previous->next = nodeBaru;
+    }
+
+    bool listEmpty()
+    {
+        return (START == NULL);
+    }
+
+    bool Search(int nim, Node **previous, Node **current)
+    {
+        *previous = START;
+        *current = START;
+
+        while ((*current != NULL) && (nim > (*current)->noMhs))
+        {
+            *previous = *current;
+            *current = (*current)->next;
+    
 
 
     }
